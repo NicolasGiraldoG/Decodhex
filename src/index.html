@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="icon" href="./favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodhex</title>
+</head>
+<body>
+    <h1>Decodhex</h1>
+    <textarea type="text" placeholder="Text to encode or decode..." id="input-text" oninput="adjustHeight(this)"></textarea>
+    <button id="key-btn">&gt; Generate Key &lt;</button>
+    <textarea name="" id="output-key" placeholder="Input secret key..." oninput="adjustHeight(this)"></textarea>
+    <div class="btn-div">
+        <button id="encode-btn">&gt; Encode &lt;</button>
+        <button id="decode-btn">&gt; Decode &lt;</button>
+    </div>
+    <span id="key-alert">Encoding/Decoding tool 🤖</span>
+    <textarea placeholder="Encoded/Decoded text..." id="output-text" oninput="adjustHeight(this)"></textarea>
+    <footer> 
+        Developed by Nicolás Giraldo 
+        <br>
+        <a href="https://github.com/NicolasGiraldoG" target="blank">&gt; GitHub &lt;</a>
+        <br>
+        <sub title="Made with Node.js and Express">about</sub>
+    </footer>
+   
+</body>
+<script src="scripts.js"></script>
+</html>

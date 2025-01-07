@@ -1,0 +1,95 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    padding: 10%;
+    margin: 0;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    background-color: white;
+    width: 10px;
+    border-style: none;
+}
+
+
+body::-webkit-scrollbar-track {
+    background-color: black;
+    border: 1px solid white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+*{
+    font-family: 'cascadia code';
+}
+
+button{
+    cursor: pointer;
+    background-color: black; 
+    border: 1px solid white; 
+    color: white;
+    font-size: 18px;
+}
+
+button:hover{
+    border: 1px solid rgb(47, 21, 219);
+    color: rgb(47, 21, 219);
+}
+
+button:active{
+    background-color:  rgb(47, 21, 219);
+    color: black;
+    border: 1px solid black;
+}
+
+textarea{
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    width: 30vw;
+    max-width: 30vw;
+    min-width: 30vw;
+    min-height: 5vh;
+    padding: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+textarea::-webkit-scrollbar {
+    background-color: white;
+    width: 10px;
+    border-style: none;
+}
+
+
+textarea::-webkit-scrollbar-track {
+    background-color: black;
+    border: 1px solid white;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+.btn-div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1vw;
+}
+
+footer{
+    font-size: 16px;
+    text-align: center;
+}
+
+sub{
+    text-decoration: underline dotted;
+}
