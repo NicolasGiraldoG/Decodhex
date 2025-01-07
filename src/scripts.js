@@ -11,7 +11,6 @@ function adjustHeight(element) {
     element.style.height = 'auto';
     element.style.height = (element.scrollHeight/2) + 'px';
     element.scrollTop = element.scrollHeight + 20;
-    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
 
 function generateKey(){
@@ -27,6 +26,7 @@ function generateKey(){
             let newKey = data.genKey + data.iv;
             keybox.value = newKey;
             keyalert.textContent = "Copy and save the secret key before generating a new one!";
+            adjustHeight(keybox);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -62,6 +62,7 @@ function encrypt() {
                 let encryptedText = data.encrypted;
                 keyalert.textContent = "Encoded succesfuly";
                 output.value = encryptedText;
+                input.value = "";
                 adjustHeight(output);
             })
             .catch(error => {
@@ -102,6 +103,7 @@ function decrypt() {
                 let decryptedText = data.decrypted;
                 keyalert.textContent = "Decoded succesfuly";
                 output.value = decryptedText;
+                input.value = "";
                 adjustHeight(output);
             })
             .catch(error => {
