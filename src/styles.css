@@ -101,6 +101,10 @@ sub{
         max-width: 80vw;
         min-width: 80vw;
     }
+    
+    sub{
+        display: none;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1279px){
@@ -108,5 +112,9 @@ sub{
         width: 60vw;
         max-width: 60vw;
         min-width: 60vw;
+    }
+
+    sub{
+        display: none;
     }
 }
