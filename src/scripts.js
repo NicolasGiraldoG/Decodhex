@@ -84,7 +84,7 @@ function decrypt() {
         const decLongKey = keybox.value;
         const decText = input.value;
 
-        fetch(`${baseUrl}api/decrypt`, {
+        fetch(`${baseUrl}/api/decrypt`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
