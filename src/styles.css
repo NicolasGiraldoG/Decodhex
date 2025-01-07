@@ -88,8 +88,25 @@ textarea::-webkit-scrollbar-thumb {
 footer{
     font-size: 16px;
     text-align: center;
+    margin-top: auto;
 }
 
 sub{
     text-decoration: underline dotted;
+}
+
+@media (max-width: 767px){
+    textarea{
+        width: 80vw;
+        max-width: 80vw;
+        min-width: 80vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px){
+    textarea{
+        width: 60vw;
+        max-width: 60vw;
+        min-width: 60vw;
+    }
 }
