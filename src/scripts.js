@@ -8,7 +8,7 @@ const decodeBtn = document.getElementById("decode-btn");
 const baseUrl = window.location.origin;
 
 function adjustHeight(element) {
-    element.style.height = 'auto';
+    element.style.height = 'fit-content';
     element.style.height = (element.scrollHeight/2) + 'px';
     element.scrollTop = element.scrollHeight + 20;
   }
@@ -63,6 +63,7 @@ function encrypt() {
                 keyalert.textContent = "Encoded succesfuly";
                 output.value = encryptedText;
                 input.value = "";
+                input.style.height = "5vh"
                 adjustHeight(output);
             })
             .catch(error => {
@@ -104,6 +105,7 @@ function decrypt() {
                 keyalert.textContent = "Decoded succesfuly";
                 output.value = decryptedText;
                 input.value = "";
+                input.style.height = "5vh"
                 adjustHeight(output);
             })
             .catch(error => {
