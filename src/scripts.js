@@ -5,6 +5,7 @@ const keyalert = document.getElementById("key-alert");
 const keyBtn = document.getElementById("key-btn");
 const encodeBtn = document.getElementById("encode-btn");
 const decodeBtn = document.getElementById("decode-btn");
+const baseUrl = window.location.origin;
 
 function adjustHeight(element) {
     element.style.height = 'auto';
@@ -15,7 +16,7 @@ function adjustHeight(element) {
 
 function generateKey(){
 
-    fetch("http://localhost:3001/api/genSecretKey")
+    fetch(`${baseUrl}/api/genSecretKey`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('unable to generate key');
@@ -44,7 +45,7 @@ function encrypt() {
         const longKey = keybox.value;
         const text = input.value;
 
-        fetch("http://localhost:3001/api/encrypt", {
+        fetch(`${baseUrl}/api/encrypt`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -83,7 +84,7 @@ function decrypt() {
         const decLongKey = keybox.value;
         const decText = input.value;
 
-        fetch("http://localhost:3001/api/decrypt", {
+        fetch(`${baseUrl}api/decrypt`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
