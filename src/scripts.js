@@ -3,6 +3,7 @@ const output = document.getElementById("output-text");
 const keybox = document.getElementById("output-key");
 const keyalert = document.getElementById("key-alert");
 const keyBtn = document.getElementById("key-btn");
+const tokenBtn = document.getElementById("token-btn");
 const encodeBtn = document.getElementById("encode-btn");
 const decodeBtn = document.getElementById("decode-btn");
 const baseUrl = window.location.origin;
@@ -13,7 +14,7 @@ function adjustHeight(element) {
     element.scrollTop = element.scrollHeight + 20;
   }
 
-function generateKey(){
+function GenerateKey(){
 
     fetch(`${baseUrl}/api/genSecretKey`)
         .then(response => {
@@ -33,7 +34,23 @@ function generateKey(){
         });
 }
 
-function encrypt() {
+function GenerateToken(){
+    fetch(`${baseUrl}/api/genToken`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('unable to generate key');
+            }
+            return response.json();
+        })
+        .then(data => {
+            let newToken = data.genToken;
+            keybox.value = newToken;
+            adjustHeight(keybox);
+            keyalert.textContent = 'generated random 32bytes token (DO NOT USE THIS FOR ENCODING/DECODING)';
+        })
+}
+
+function Encrypt() {
     if (input.value === "" || input.value === null){
         keyalert.textContent = "Please input the text to encode";
     }else if(keybox.value === "" || keybox.value === null){
@@ -74,7 +91,7 @@ function encrypt() {
 
 }
 
-function decrypt() {
+function Decrypt() {
     if (input.value === "" || input.value === null){
         keyalert.textContent = "Please input the text to decode";
     }else if(keybox.value === "" || keybox.value === null){
@@ -114,6 +131,7 @@ function decrypt() {
     }
 }
 
-keyBtn.addEventListener("click", generateKey);
-encodeBtn.addEventListener("click", encrypt);
-decodeBtn.addEventListener("click", decrypt);
+keyBtn.addEventListener("click", GenerateKey);
+encodeBtn.addEventListener("click", Encrypt);
+decodeBtn.addEventListener("click", Decrypt);
+tokenBtn.addEventListener("click", GenerateToken);

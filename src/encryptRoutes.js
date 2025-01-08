@@ -33,4 +33,11 @@ router.post('/decrypt', (req, res) => {
     res.json({ decrypted });
 });
 
+router.get('/genToken', (req, res) =>{
+
+    const genToken = crypto.randomBytes(32).toString('hex');
+    res.json({genToken});
+
+});
+
 module.exports = router;
