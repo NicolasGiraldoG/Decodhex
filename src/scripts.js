@@ -10,7 +10,7 @@ const baseUrl = window.location.origin;
 
 function adjustHeight(element) {
     element.style.height = 'fit-content';
-    element.style.height = (element.scrollHeight) + 'px';
+    element.style.height = (element.scrollHeight/1.5) + 'px';
     element.scrollTop = element.scrollHeight + 20;
   }
 
